@@ -1,5 +1,29 @@
-const sumAll = function() {
+const sumAll = function(num1, num2) {
+    if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+        return 'ERROR';
+    }
 
+    if (!Number.isInteger(num1) || !Number.isInteger(num2)) {
+        return 'ERROR';
+    }
+
+    if (num1 < 0 || num2 < 0) {
+        return 'ERROR';
+    }
+    // Step 1: Create a variable to store the sum
+    let sum = 0;
+
+    // Step 2: Loop from the smaller number to the larger number
+    // (We need to handle cases where num1 > num2!)
+    const start = Math.min(num1, num2);
+    const end = Math.max(num1, num2);
+
+    for (let i = start; i <= end; i++) {
+    // Step 3: Add each number in the range to sum
+        sum += i;
+    }
+    // Step 4: Return the sum
+    return sum
 };
 
 // Do not edit below this line
